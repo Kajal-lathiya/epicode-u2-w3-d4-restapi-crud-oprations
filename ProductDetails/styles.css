@@ -1,0 +1,10 @@
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+body {
+    background-color: #eeeeee !important;
+}

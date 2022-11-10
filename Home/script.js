@@ -1,4 +1,4 @@
-async function getProducts() {
+getProducts = async() => {
     let myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NjgwODUzMjEsImV4cCI6MTY2OTI5NDkyMX0.-w-mNxtbLWxs9FTT-Wp27ksHjG6PpT8b7kZVdHl4GBw");
     const options = {
@@ -13,7 +13,7 @@ async function getProducts() {
     return products;
 }
 
-function renderProducts(listOfProducts) {
+renderProducts = (listOfProducts) => {
     let productslist = document.querySelector(".list-group");
     listOfProducts.map(({ name, description, brand, imageUrl, price, _id, userId }, index) => {
         const divNode = document.createElement("div");
@@ -43,7 +43,7 @@ function renderProducts(listOfProducts) {
               <div style="width: 50px;">
                 <h5 class="mb-0">$${price}</h5>
               </div>
-              <a href="details.html?productId=${_id} style=""><i class="fas fa-trash-alt">VIEW DETAILS</i></a>
+              <a href="../ProductDetails/index.html?productId=${_id}"><i class="fas fa-trash-alt">VIEW DETAILS</i></a>
             </div>
           </div>
         </div>`
