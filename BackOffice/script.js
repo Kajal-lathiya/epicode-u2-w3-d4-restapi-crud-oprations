@@ -3,7 +3,6 @@ const productId = params.get("productId");
 
 window.onload = async() => {
     if (productId) {
-        console.log('productId:', productId);
         let myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NjgwODUzMjEsImV4cCI6MTY2OTI5NDkyMX0.-w-mNxtbLWxs9FTT-Wp27ksHjG6PpT8b7kZVdHl4GBw");
         const options = {
@@ -25,8 +24,7 @@ window.onload = async() => {
         document.querySelector("#product-price").value = product.price;
     }
 };
-
-async function onFormSubmit(event) {
+onFormSubmit = async(event) => {
     event.preventDefault();
     const newProduct = {
         name: document.querySelector("#product-name").value,
@@ -35,7 +33,6 @@ async function onFormSubmit(event) {
         brand: document.querySelector("#product-brand").value,
         imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlf3QTD8Jb0maN6DL1ArXFNibJKAlEDiGPow&usqp=CAU",
     };
-    console.log('newProduct:', newProduct);
     let myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2NjgwODUzMjEsImV4cCI6MTY2OTI5NDkyMX0.-w-mNxtbLWxs9FTT-Wp27ksHjG6PpT8b7kZVdHl4GBw");
     myHeaders.append("Content-Type", "application/json");
